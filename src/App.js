@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
 
-  // data state to store the TV Maze API data. Its initial value is an empty array
+  // data state to store the Randomeuser API data. State's initial value is an empty array
   const [data, setData] = useState([]);
 
   // Using useEffect to call the API once mounted and set the data
@@ -23,7 +23,7 @@ function App() {
   const columns = useMemo(
     () => [
       {
-        // first group - TV Show
+        // first group - Employee Picture & Name
         Header: "Employee",
         // First group columns
         columns: [
@@ -41,7 +41,6 @@ function App() {
           {
             Header: "First Name",
             accessor: "name.first",
-            // accessor: "name.last"
           },
           {
             Header: "Last Name",
@@ -50,7 +49,7 @@ function App() {
         ]
       },
       {
-        // Second group - Details
+        // Second group - Employee Personal info
         Header: "Employee Info.",
         // Second group columns
         columns: [
@@ -71,7 +70,6 @@ function App() {
     ],
     []
   );
-  // console.log(columns)
 
   return (
     <div className="App">
