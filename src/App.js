@@ -13,7 +13,7 @@ function App() {
   // Using useEffect to call the API once mounted and set the data
   useEffect(() => {
     (async () => {
-      const result = await axios('https://randomuser.me/api/?results=50');
+      const result = await axios('https://randomuser.me/api/?results=5');
       setData(result.data.results);
       console.log(result.data)
     })();
@@ -29,11 +29,11 @@ function App() {
         columns: [
           {
             Header: "Image",
-            accessor: "picture.thumbnail",
+            accessor: "picture.large",
             Cell: ({ cell: { value } }) => {
               return (
                 <>
-                  {<img src={value} alt=""/>}
+                  {<img src={value} alt="profile thumbnail"/>}
                 </>
               );
             }          
