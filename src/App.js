@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios"
 import Table from "./Table";
+import Navbar from "./Nav";
+
 import "./App.css";
 
 function App() {
@@ -65,6 +67,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <Table columns={columns} data={data} />
     </div>
   );

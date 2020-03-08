@@ -61,3 +61,27 @@ input {
   border: 1px solid #ddd;
   box-shadow: none;
 }
+
+nav{
+  height: 200px;
+  padding-bottom: 30px;
+  background-color: #3c3cdaa5;
+  text-align: center; 
+  padding-top: 4%;
+}
+
+nav h1{
+  font-size: 60px;
+  color: white;
+}
+
+nav p {
+  color: white;
+  font-size: x-large;
+}
+
+
+
+
+
+
