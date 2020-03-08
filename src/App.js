@@ -6,18 +6,20 @@ import Navbar from "./Nav";
 import "./App.css";
 
 function App() {
+
   // data state to store the TV Maze API data. Its initial value is an empty array
   const [data, setData] = useState([]);
 
   // Using useEffect to call the API once mounted and set the data
   useEffect(() => {
     (async () => {
-      const result = await axios('https://randomuser.me/api/?results=10');
+      const result = await axios('https://randomuser.me/api/?results=50');
       setData(result.data.results);
       console.log(result.data)
     })();
   }, []);
 
+  // Table column, row and cells setup
   const columns = useMemo(
     () => [
       {
@@ -28,7 +30,13 @@ function App() {
           {
             Header: "Image",
             accessor: "picture.thumbnail",
-            // Cell: cellInfo => ( <a href={picture.thumbnail}></a> )
+            Cell: ({ cell: { value } }) => {
+              return (
+                <>
+                  {<img src={value} alt=""/>}
+                </>
+              );
+            }          
           },
           {
             Header: "First Name",
@@ -74,4 +82,3 @@ function App() {
 }
 
 export default App;
-

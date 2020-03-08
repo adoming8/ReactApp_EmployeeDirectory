@@ -21,12 +21,9 @@ export default function Table({ columns, data }) {
     headerGroups, // headerGroups if your table have groupings
     rows, // rows for the table based on the data passed
     prepareRow // Prepare the row (this function need to called for each row before getting the row props)
-  } = useTable({
-    columns,
-    data
-  },
-  useFilters, // Adding the useFilters Hook to the table
-  useSortBy
+  } = useTable({columns, data},
+    useFilters, // Adding the useFilters Hook to the table
+    useSortBy
   );
   /* 
     Render the UI for your table
