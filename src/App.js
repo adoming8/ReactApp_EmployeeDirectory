@@ -13,7 +13,7 @@ function App() {
   // Using useEffect to call the API once mounted and set the data
   useEffect(() => {
     (async () => {
-      const result = await axios('https://randomuser.me/api/?results=30');
+      const result = await axios('https://randomuser.me/api/?results=50');
       setData(result.data.results);
       console.log(result.data)
     })();
